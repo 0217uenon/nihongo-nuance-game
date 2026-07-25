@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fff8e7">
+  <meta name="description" content="生き物たちと、似ている日本語の微妙な違いを学ぶ子ども向けクイズアプリ">
+  <title>ことばの森｜日本語ニュアンスゲーム</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#app">ゲームへ移動</a>
+  <div class="forest-bg" aria-hidden="true">
+    <span class="cloud cloud-a"></span><span class="cloud cloud-b"></span>
+    <span class="hill hill-a"></span><span class="hill hill-b"></span>
+  </div>
+
+  <header class="topbar">
+    <button class="brand button-plain" data-action="home" aria-label="タイトルへ戻る">
+      <span class="brand-mark">こと</span>
+      <span><strong>ことばの森</strong><small>日本語ニュアンスゲーム</small></span>
+    </button>
+    <div class="top-actions">
+      <button class="icon-button" data-action="repeat" aria-label="画面の文章を読み上げる" title="読み上げ">🔊</button>
+      <button class="icon-button" data-action="settings" aria-label="設定を開く" title="設定">⚙️</button>
+    </div>
+  </header>
+
+  <main id="app" tabindex="-1" aria-live="polite"></main>
+
+  <dialog id="settings-dialog" class="settings-dialog">
+    <form method="dialog">
+      <div class="dialog-head">
+        <div>
+          <p class="eyebrow">じぶんに ぴったり</p>
+          <h2>あそびやすさ設定</h2>
+        </div>
+        <button class="icon-button" value="close" aria-label="設定を閉じる">✕</button>
+      </div>
+      <label class="toggle-row">
+        <span><strong>自動読み上げ</strong><small>問題と解説を声で読む</small></span>
+        <input id="setting-speech" type="checkbox" role="switch">
+      </label>
+      <label class="toggle-row">
+        <span><strong>ふりがな</strong><small>漢字の読み方を表示</small></span>
+        <input id="setting-ruby" type="checkbox" role="switch">
+      </label>
+      <label class="toggle-row">
+        <span><strong>動きを少なく</strong><small>アニメーションを控えめにする</small></span>
+        <input id="setting-motion" type="checkbox" role="switch">
+      </label>
+      <label class="range-row">
+        <span><strong>声の速さ</strong><small id="rate-label">ふつう</small></span>
+        <input id="setting-rate" type="range" min="0.7" max="1.1" value="0.9" step="0.05">
+      </label>
+      <label class="select-row">
+        <span><strong>予備の日本語音声</strong><small>収録音声が使えない場合に利用します</small></span>
+        <select id="setting-voice" aria-describedby="voice-help"></select>
+      </label>
+      <p class="voice-help natural">✨ 通常は、親しみやすい日本語ニューラル音声を再生します。</p>
+      <p id="voice-help" class="voice-help">予備として利用できる端末音声を確認しています。</p>
+      <button class="primary-button wide" value="close">この設定であそぶ</button>
+    </form>
+  </dialog>
+
+  <script src="data/questions.js"></script>
+  <script src="data/knowledge.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

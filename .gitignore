@@ -1,0 +1,10 @@
+# 公開しない開発用ファイル
+*.docx
+*-preview.png
+debug.log
+create_plan_docx.py
+tools/
+tests/
+__pycache__/
+.DS_Store
+Thumbs.db
