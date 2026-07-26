@@ -1,0 +1,13 @@
+{
+  "name": "kotoba-no-mori",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "vite build && shx cp -r js data dist && shx mkdir -p dist/assets && shx cp -r assets/audio dist/assets"
+  },
+  "devDependencies": {
+    "shx": "^0.4.0",
+    "vite": "^7.0.0"
+  }
+}
