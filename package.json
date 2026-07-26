@@ -4,10 +4,17 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "vite build && shx cp -r js data dist && shx mkdir -p dist/assets && shx cp -r assets/audio dist/assets"
+    "prebuild": "shx mkdir -p public && shx cp -r assets css data js public && shx cp index.html public/game.html",
+    "build": "vinext build",
+    "postbuild": "shx mkdir -p dist/.openai && shx cp .openai/hosting.json dist/.openai/hosting.json"
+  },
+  "dependencies": {
+    "react": "^19.2.6",
+    "react-dom": "^19.2.6",
+    "vinext": "^1.0.0-beta.4"
   },
   "devDependencies": {
-    "shx": "^0.4.0",
-    "vite": "^7.0.0"
+    "@vitejs/plugin-rsc": "^0.5.26",
+    "shx": "^0.4.0"
   }
 }
